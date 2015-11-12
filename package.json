@@ -1,0 +1,55 @@
+{
+  "name": "hapi-imageoptimizer",
+  "version": "0.0.9",
+  "description": "Proxy for serving optimized images",
+  "author": "Frederic Hemberger (https://frederic-hemberger.de/)",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node server.js 2>&1",
+    "lab": "NODE_ENV=test node node_modules/.bin/lab -L --lint-warnings-threshold 99999",
+    "test": "npm run lab -- test/*.js",
+    "coverage": "npm run lab -- -c",
+    "coverage:html": "npm run coverage -- -r html -o coverage.html"
+  },
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "keywords": [
+    "hapi",
+    "image",
+    "images",
+    "optimize",
+    "imageoptim",
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "svg",
+    "proxy"
+  ],
+  "dependencies": {
+    "boom": "^3.0.0",
+    "catbox": "^7.0.0",
+    "catbox-memory": "^2.0.1",
+    "config": "^1.16.0",
+    "generaterr": "^1.2.0",
+    "gifsicle": "^3.0.1",
+    "gm": "^1.21.1",
+    "good": "^6.4.0",
+    "good-console": "^5.2.0",
+    "hapi": "^11.1.0",
+    "hoek": "^3.0.1",
+    "joi": "^7.0.0",
+    "jpegoptim-bin": "^2.0.1",
+    "optipng-stream-bin": "0.0.7",
+    "xregexp": "^3.0.0"
+  },
+  "devDependencies": {
+    "code": "^2.0.1",
+    "eslint-config-hapi": "^7.0.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "lab": "^7.1.0",
+    "proxyquire": "^1.7.3"
+  }
+}

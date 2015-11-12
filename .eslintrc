@@ -1,0 +1,24 @@
+{
+  "plugins": ["hapi"],
+  "extends": "hapi",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "complexity": [1, 8],
+    "consistent-return": 0,
+    "eol-last": 1,
+    "key-spacing": 0,
+    "max-depth": [1, 2],
+    "max-nested-callbacks": [2, 4],
+    "max-params": [1, 4],
+    "no-multi-spaces": 0,
+    "no-shadow": 0,
+    "no-trailing-spaces": 1,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": 1,
+    "quotes": [1, "single"],
+    "space-before-function-paren": [1, "always"]
+  }
+}
