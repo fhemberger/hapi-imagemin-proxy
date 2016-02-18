@@ -43,6 +43,7 @@
     "joi": "^7.0.0",
     "jpegoptim-bin": "^2.0.1",
     "optipng-stream-bin": "0.0.7",
+    "wreck": "^7.0.0",
     "xregexp": "^3.0.0"
   },
   "devDependencies": {
