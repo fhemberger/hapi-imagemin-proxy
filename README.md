@@ -2,6 +2,8 @@
 
 Proxy written in Node.js using [hapi](http://hapijs.com/).
 
+It requires [graphicsmagick](http://www.graphicsmagick.org) to be installed (e.g. on Mac OS X via [Homebrew](http://brew.sh): `brew install graphicsmagick`).
+
 ```
 npm install hapi-imageoptimizer
 ```
