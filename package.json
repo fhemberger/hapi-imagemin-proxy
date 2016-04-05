@@ -50,7 +50,7 @@
     "code": "^2.1.0",
     "eslint-config-hapi": "^9.1.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "lab": "^10.3.0",
+    "lab": "^10.3.1",
     "proxyquire": "^1.7.4"
   }
 }
