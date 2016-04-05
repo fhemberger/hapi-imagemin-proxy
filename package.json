@@ -40,7 +40,7 @@
     "good-console": "^5.3.1",
     "hapi": "^13.0.0",
     "hoek": "^3.0.1",
-    "joi": "^8.0.4",
+    "joi": "^8.0.5",
     "jpegoptim-bin": "3.0.0",
     "optipng-stream-bin": "0.0.7",
     "wreck": "^7.0.2",
