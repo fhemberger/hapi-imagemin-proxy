@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "hapi-imageoptimizer-example",
+  "scripts": {
+    "start": "node server.js 2>&1",
+    "postinstall": "cd ..; npm install; cd -"
+  },
+  "dependencies": {
+    "good": "6.x.x",
+    "good-console": "5.x.x",
+    "hapi": "13.x.x"
+  }
+}
