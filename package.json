@@ -46,6 +46,6 @@
     "eslint-config-hapi": "^9.1.0",
     "eslint-plugin-hapi": "^4.0.0",
     "lab": "^10.4.0",
-    "proxyquire": "^1.7.4"
+    "proxyquire": "^1.7.6"
   }
 }
