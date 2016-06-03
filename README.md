@@ -1,4 +1,4 @@
-# hapi-imageoptimizer
+# hapi-imagemin-proxy
 
 Image optimization proxy written in Node.js using [hapi](http://hapijs.com/).
 
@@ -12,22 +12,37 @@ Allows you to resize an image and change image formats. Output is always optimiz
 
 ## Usage
 
-Requires [graphicsmagick](http://www.graphicsmagick.org) to be installed (e.g. on Mac OS X via [Homebrew](http://brew.sh): `brew install graphicsmagick`).
+Requires [GraphicsMagick](http://www.graphicsmagick.org) to be installed (e.g. on Mac OS X via [Homebrew](http://brew.sh): `brew install graphicsmagick`).
 
 ```
-npm install hapi-imageoptimizer
+npm install hapi-imagemin-proxy
 ```
 
-Afterwards, include `hapi-imageoptimizer` as plug-in into your existing Hapi project (a demo server can be found in `/example`):
+Afterwards, include `hapi-imagemin-proxy` as plug-in into your existing Hapi project (a demo server can be found in `/example`):
 
 ```javascript
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 
 server.register({
-    plugin: require('hapi-imageoptimizer'),
+    plugin: require('hapi-imagemin-proxy'),
     options: {
         source: '/path/to/images',
+        cache: {},
+        imageCache: {
+            engine: require('catbox-memory'),
+            options: {
+                expiresIn: 3600000
+            }
+        },
+        plugins: [
+            imageminGm.resize(),
+            imageminGm.convert(),
+            imageminJpegoptim({ progressive: true, max: 75 }),
+            imageminPngquant(),
+            imageminGifsicle({ optimizationLevel: 3 }),
+            imageminSvgo()
+        ]
         // ...
     }
 }, function (err) {
@@ -46,19 +61,25 @@ server.register({
 - `source`: Location of the images to be served. Can be either a local path or a URL (required).
 - `cache`: Sets Hapi's [route.cache](http://hapijs.com/api#route-options) options
 - `imagecache`:
-    - `strategy`: Catbox caching strategy (defaults to `catbox-memory`)
-    - `options`: Strategy specific options (optional)
-    - `ttl`: Cache time-to-live in milliseconds (default: one hour)
+    - `engine`: Catbox caching engine. **Must** support binary data, e.g. [`catbox-s3`](https://github.com/fhemberger/catbox-s3). Default: `require('catbox-memory')`
+    - `options`: Engine specific options (optional)
+        - `maxByteSize`: only for `catbox-memory`, default: `104857600` (100MB)
+        - `expiresIn`: Cache time-to-live in milliseconds, default: `3600000` (one hour)
+- `plugins`: Array of imagemin optimization plug-ins, defaults:
 
-The catbox strategy **must** support binary data (e.g. [`catbox-s3`](https://github.com/fhemberger/catbox-s3)), the default is `catbox-memory` with `imagecache.options.maxByteSize` set to `104857600` (100MB).
+    ```
+    imageminJpegoptim({ progressive: true, max: 75 }),
+    imageminPngquant(),
+    imageminGifsicle({ optimizationLevel: 3 }),
+    imageminSvgo()
+    ```
 
 
 ## TODO
 
-- Write tests
 - Use [cjpeg-dssim](https://github.com/technopagan/cjpeg-dssim) for JPG optimization
 
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.txt)

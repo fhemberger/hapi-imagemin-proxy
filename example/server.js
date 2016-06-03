@@ -9,11 +9,20 @@ internals.plugins = [
     {
         register: require('good'),
         options: {
-            reporters: [{
-                reporter: require('good-console'),
-                events: { log: '*', request: '*' },
-                config: { format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]' }
-            }]
+            reporters: {
+                console: [
+                    {
+                        module: 'good-squeeze',
+                        name: 'Squeeze',
+                        args: [{ log: '*', request: '*' }]
+                    },
+                    {
+                        module: 'good-console',
+                        args: [{ format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]' }]
+                    },
+                    'stdout'
+                ]
+            }
         }
     },
     {
