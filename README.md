@@ -2,6 +2,8 @@
 
 Image optimization proxy written in Node.js using [hapi](http://hapijs.com/).
 
+[![Build Status](https://travis-ci.org/fhemberger/hapi-imagemin-proxy.svg?branch=master)](http://travis-ci.org/fhemberger/hapi-imagemin-proxy) ![Current Version](https://img.shields.io/npm/v/hapi-imagemin-proxy.svg)
+
 Allows you to resize an image and change image formats. Output is always optimized for the smallest file size.
 
 - `http://localhost:5678/cat.gif,w100` - Resize to a width of 100px
