@@ -3,6 +3,7 @@
 const Hapi = require('hapi');
 const Code = require('code');
 const Lab = require('lab');
+const Boom = require('boom');
 const Sinon = require('sinon');
 const proxyquire = require('proxyquire').noCallThru();
 
@@ -104,14 +105,13 @@ describe('hapi-imagemin-proxy', () => {
 
     it('should return HTTP 404 if image file could not be loaded', (done) => {
 
-        const err = new Error();
-        err.name = 'LoadImageError';
-
+        const err = Boom.wrap(new Error('ENOENT: no such file or directory'), 404);
         imageCache.get.returns(Promise.reject(err));
 
         server.inject('/imagename.jpg', (res) => {
 
             expect( res.statusCode ).to.equal( 404 );
+            expect( JSON.parse(res.payload).message ).to.not.exist();
             done();
         });
     });
@@ -119,11 +119,13 @@ describe('hapi-imagemin-proxy', () => {
 
     it('should return HTTP 500 on error', (done) => {
 
-        imageCache.get.returns(Promise.reject(new Error()));
+        const err = Boom.wrap(new Error(), 500);
+        imageCache.get.returns(Promise.reject(err));
 
         server.inject('/imagename.jpg', (res) => {
 
             expect( res.statusCode ).to.equal( 500 );
+            expect( JSON.parse(res.payload).message ).to.equal('An internal server error occurred');
             done();
         });
     });
