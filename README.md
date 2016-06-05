@@ -61,6 +61,7 @@ server.register({
 ## Options
 
 - `source`: Location of the images to be served. Can be either a local path or a URL (required).
+- `wreck`: When `source` is an URL, these request options are passed to [Wreck](https://github.com/hapijs/wreck#requestmethod-uri-options-callback).
 - `cache`: Sets Hapi's [route.cache](http://hapijs.com/api#route-options) options
 - `imagecache`:
     - `engine`: Catbox caching engine. **Must** support binary data, e.g. [`catbox-s3`](https://github.com/fhemberger/catbox-s3). Default: `require('catbox-memory')`
