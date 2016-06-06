@@ -1,8 +1,9 @@
 {
   "name": "hapi-imagemin-proxy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Hapi proxy for serving optimized images",
   "author": "Frederic Hemberger (https://frederic-hemberger.de/)",
+  "repository": "https://github.com/fhemberger/hapi-imagemin-proxy.git",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
