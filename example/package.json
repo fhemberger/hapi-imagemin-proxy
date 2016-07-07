@@ -9,7 +9,7 @@
     "good": "^7.0.1",
     "good-console": "^6.1.2",
     "good-squeeze": "^3.0.1",
-    "hapi": "^13.4.1",
+    "hapi": "^13.5.0",
     "promise.pipe": "^3.0.0"
   }
 }
