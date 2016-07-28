@@ -48,7 +48,7 @@
     "joi": "9.x.x",
     "ms": "^0.7.1",
     "promise.pipe": "^3.0.0",
-    "wreck": "7.x.x",
+    "wreck": "8.0.1",
     "xregexp": "^3.1.1"
   },
   "devDependencies": {
