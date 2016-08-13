@@ -55,7 +55,7 @@
     "code": "3.x.x",
     "eslint-config-hapi": "9.x.x",
     "eslint-plugin-hapi": "4.x.x",
-    "hapi": "13.5.0",
+    "hapi": "14.2.0",
     "lab": "10.x.x",
     "pre-commit": "^1.1.3",
     "proxyquire": "^1.7.9",
