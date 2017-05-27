@@ -10,7 +10,9 @@
     "lab": "NODE_ENV=test lab -L --lint-warnings-threshold 99999",
     "test": "npm run lab -- test/*.js",
     "coverage": "npm run lab -- -c",
-    "coverage:html": "npm run coverage -- -r html -o coverage.html"
+    "coverage:html": "npm run coverage -- -r html -o coverage.html",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 4.2.0"
@@ -49,7 +51,8 @@
     "ms": "^2.0.0",
     "promise.pipe": "^3.0.0",
     "wreck": "^12.2.0",
-    "xregexp": "^3.2.0"
+    "xregexp": "^3.2.0",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "code": "^4.0.0",
@@ -60,5 +63,6 @@
     "pre-commit": "^1.2.2",
     "proxyquire": "^1.8.0",
     "sinon": "^2.3.1"
-  }
+  },
+  "snyk": true
 }
