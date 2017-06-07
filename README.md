@@ -1,5 +1,7 @@
 # hapi-imagemin-proxy
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fhemberger/hapi-imagemin-proxy.svg)](https://greenkeeper.io/)
+
 Image optimization proxy written in Node.js using [hapi](http://hapijs.com/).
 
 [![Build Status](https://travis-ci.org/fhemberger/hapi-imagemin-proxy.svg?branch=master)](http://travis-ci.org/fhemberger/hapi-imagemin-proxy) ![Current Version](https://img.shields.io/npm/v/hapi-imagemin-proxy.svg)

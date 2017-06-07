@@ -111,7 +111,7 @@ describe('hapi-imagemin-proxy', () => {
         server.inject('/imagename.jpg', (res) => {
 
             expect( res.statusCode ).to.equal( 404 );
-            expect( JSON.parse(res.payload).message ).to.not.exist();
+            expect( JSON.parse(res.payload).message ).to.equal('Not Found');
             done();
         });
     });
