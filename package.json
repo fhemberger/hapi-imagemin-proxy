@@ -39,7 +39,7 @@
   "dependencies": {
     "boom": "^5.1.0",
     "catbox": "^7.1.5",
-    "catbox-memory": "^2.0.4",
+    "catbox-memory": "^3.0.0",
     "generaterr": "^1.5.0",
     "hoek": "^4.1.1",
     "imagemin-gifsicle": "^5.1.0",
