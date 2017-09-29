@@ -6,3 +6,6 @@ patch:
   'npm:ms:20170412':
     - imagemin-gm > gm > debug > ms:
         patched: '2017-05-26T08:21:08.238Z'
+  'npm:debug:20170905':
+    - imagemin-gm > gm > debug:
+        patched: '2017-09-29T08:21:08.204Z'
