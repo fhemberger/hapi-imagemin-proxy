@@ -46,7 +46,7 @@
     "imagemin-gm": "^1.0.3",
     "imagemin-jpegoptim": "^5.0.0",
     "imagemin-pngquant": "^5.0.0",
-    "imagemin-svgo": "^5.2.1",
+    "imagemin-svgo": "^6.0.0",
     "joi": "^11.0.1",
     "ms": "^2.0.0",
     "promise.pipe": "^3.0.0",
