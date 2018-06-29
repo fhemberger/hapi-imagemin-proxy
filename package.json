@@ -12,7 +12,8 @@
     "coverage": "npm run lab -- -c",
     "coverage:html": "npm run coverage -- -r html -o coverage.html",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 6.0.0"
@@ -50,7 +51,7 @@
     "joi": "^13.0.0",
     "ms": "^2.1.1",
     "promise.pipe": "^3.0.0",
-    "snyk": "^1.69.7",
+    "snyk": "^1.87.0",
     "wreck": "12.x.x",
     "xregexp": "^4.0.0"
   },
