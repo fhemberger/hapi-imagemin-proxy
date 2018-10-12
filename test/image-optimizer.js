@@ -16,7 +16,7 @@ const it = lab.it;
 
 // Test stubs
 /* eslint-disable brace-style, hapi/hapi-scope-start */
-const jpeg = new Buffer(new Uint8Array([0xFF, 0xD8]));
+const jpeg = Buffer.from(new Uint8Array([0xFF, 0xD8]));
 const imageminGmStub = {
     convert : Sinon.stub().returns(() => { Promise.resolve(jpeg); }),
     resize  : Sinon.stub().returns(() => { Promise.resolve(jpeg); })

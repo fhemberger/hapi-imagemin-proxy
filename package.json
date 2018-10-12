@@ -1,13 +1,13 @@
 {
   "name": "hapi-imagemin-proxy",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Hapi proxy for serving optimized images",
   "author": "Frederic Hemberger (https://frederic-hemberger.de/)",
   "repository": "https://github.com/fhemberger/hapi-imagemin-proxy.git",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "lab": "NODE_ENV=test lab -L --lint-warnings-threshold 99999 --globals SharedArrayBuffer,Atomics,WebAssembly,__RESOLVED_TMP_DIR__",
+    "lab": "NODE_ENV=test lab -L --lint-warnings-threshold 99999 --globals __RESOLVED_TMP_DIR__,Atomics,BigInt,BigInt64Array,BigUint64Array,SharedArrayBuffer,URL,URLSearchParams,WebAssembly",
     "test": "npm run lab -- test/*.js",
     "coverage": "npm run lab -- -c",
     "coverage:html": "npm run coverage -- -r html -o coverage.html",
@@ -40,20 +40,20 @@
   "dependencies": {
     "boom": "^6.0.0",
     "catbox": "^9.0.0",
-    "catbox-memory": "^3.0.0",
+    "catbox-memory": "^3.1.2",
     "generaterr": "^1.5.0",
-    "hoek": "^5.0.3",
+    "hoek": "^5.0.4",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-gm": "^2.0.0",
     "imagemin-jpegoptim": "^5.2.0",
     "imagemin-pngquant": "^5.1.0",
     "imagemin-svgo": "^6.0.0",
-    "joi": "^13.0.0",
+    "joi": "^13.7.0",
     "ms": "^2.1.1",
     "promise.pipe": "^3.0.0",
-    "snyk": "^1.69.7",
+    "snyk": "^1.103.4",
     "wreck": "12.x.x",
-    "xregexp": "^4.0.0"
+    "xregexp": "^4.2.0"
   },
   "devDependencies": {
     "code": "4.x.x",

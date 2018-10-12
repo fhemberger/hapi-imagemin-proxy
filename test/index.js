@@ -18,7 +18,7 @@ const it = lab.it;
 
 
 // Test stubs
-const jpeg = new Buffer(new Uint8Array([0xFF, 0xD8]));
+const jpeg = Buffer.from(new Uint8Array([0xFF, 0xD8]));
 const imageOptimizer = {
     get      : Sinon.stub(),
     fullPath : Sinon.stub(),
